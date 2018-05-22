@@ -1,4 +1,11 @@
 def prime?(integer)
-  test_divisors = (2..(integer - 1)).to_a
-  (test_divisors.any? {|divisor| integer % divisor == 0} || integer == 0 || integer == 1) ? false : true
+  if integer < 2  
+    return false
+  end    
+  (2...integer).to_a.each do |num| 
+    if integer % num == 0
+      return false
+    end
+  end
+  return true 
 end
