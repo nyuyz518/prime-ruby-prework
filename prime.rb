@@ -2,10 +2,11 @@ def prime?(n)
   if n < 2  
     return false
   end    
-  (2...n).to_a.each do |num| 
+  (2...n).to_a.each { |num| 
     if n % num == 0
       return false
     end
-  end
+  }
+  
   return true 
 end
